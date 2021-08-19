@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name = "myName"
+            type="com.example.aboutme.MyName" />
+
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:id="@+id/name_text"
+        style="@style/title_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name_text"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/star_content_description"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+    <TextView
+        android:id="@+id/nick_name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="@={myName.nickname}"
+        style="@style/title_text_style"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/nick_name_input"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:hint="@string/nick_name_hint"
+          android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/done_btn"
+        android:text="@string/done_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ScrollView
+        android:layout_margin="@dimen/mid_margin_16"
+        android:padding="@dimen/small_padding_8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/description_text" />
+    </ScrollView>
+
+</LinearLayout>
+    </layout>
